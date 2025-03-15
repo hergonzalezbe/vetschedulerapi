@@ -17,9 +17,7 @@ class Database
             $dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
             $dotenv->load();
 
-            $dsn = 'mysql:host=localhost;dbname=vetschedulerdb;charset=utf8mb4';
-            // $user = 'root';
-            // $password = 'mst2024';            
+            $dsn = 'mysql:host=localhost;dbname=vetschedulerdb;charset=utf8mb4';            
 
             $user = $_ENV['DB_USERNAME'];
             $password = $_ENV['DB_PASSWORD'];            
