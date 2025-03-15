@@ -17,6 +17,7 @@ $dotenv->load();
 
 $app = AppFactory::create();
 $app->setBasePath('/vetschedulerapi/public');
+$app->addBodyParsingMiddleware();
 $app->add(new ApiKeyMiddleware());
 header_remove("X-Powered-By");
 
