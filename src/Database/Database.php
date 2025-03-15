@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Database;
+use Dotenv\Dotenv;
 
 use PDO;
 
@@ -13,9 +14,15 @@ class Database
     public static function getInstance()
     {
         if (self::$instance === null) {
+            $dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
+            $dotenv->load();
+
             $dsn = 'mysql:host=localhost;dbname=vetschedulerdb;charset=utf8mb4';
-            $user = 'root';
-            $password = 'mst2024';
+            // $user = 'root';
+            // $password = 'mst2024';            
+
+            $user = $_ENV['DB_USERNAME'];
+            $password = $_ENV['DB_PASSWORD'];            
 
             try {
                 self::$instance = new PDO($dsn, $user, $password);

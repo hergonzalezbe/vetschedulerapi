@@ -7,8 +7,7 @@ use App\Models\Cita;
 class CitaController
 {
     public function obtenerCitas()
-    {
-        // Llamamos al modelo para obtener todas las citas
+    {       
         $citas = Cita::obtenerTodasLasCitas();
         echo json_encode($citas);
     }

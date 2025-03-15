@@ -24,7 +24,7 @@ class MascotaController
             // Si no existe el cliente, devolver un error y salir
             echo json_encode(["error" => "Cliente no encontrado"]);
             http_response_code(404);
-            return;  // Termina la ejecución para evitar más respuestas
+            return; 
         }
 
         if (!$cliente_id || !$nombre || !$especie || !$raza || !$edad) {
